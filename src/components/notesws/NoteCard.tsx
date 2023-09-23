@@ -5,7 +5,7 @@ const NoteCard = ({ note }: { note: NoteFields }) => {
   const sinceCreation = timeSinceCreation(note.createdAt)
 
   return (
-    <div className='block max-w-sm w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-orange-200'>
+    <div className='block max-w-sm w-full p-6 bg-gray-50 rounded-lg hover:bg-orange-100'>
       <div>
         <h5 className='mb-2 text-lg font-semibold tracking-tight text-gray-700'>
           {note.title}
