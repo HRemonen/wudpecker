@@ -17,7 +17,7 @@ const workspaceItems = [
         />
       </svg>
     ),
-    to: '/',
+    to: '/notes',
   },
   {
     name: 'Tasks',

@@ -13,8 +13,14 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        index: true,
+        path: 'notes',
         element: <NoteWorkspace />,
+        children: [
+          {
+            path: ':noteTitle',
+            element: <h1>Single note</h1>,
+          },
+        ],
       },
     ],
   },

@@ -1,18 +1,39 @@
-import { NoteFields } from '../../types'
-import generateNotePreview from '../../utils/notePreview'
-import timeSinceCreation from '../../utils/timedeltas'
+import { useNavigate } from 'react-router-dom'
+import slugify from 'slugify'
+
 import CollaboratorStack from '../common/CollaboratorStack'
 
+import generateNotePreview from '../../utils/notePreview'
+import timeSinceCreation from '../../utils/timedeltas'
+
+import { NoteFields } from '../../types'
+
 const NoteCard = ({ note }: { note: NoteFields }) => {
+  const navigate = useNavigate()
   const sinceCreation = timeSinceCreation(note.createdAt)
 
   const previewtext = generateNotePreview(note)
 
+  const handleNoteClick = () => {
+    const cleanedTitle = slugify(note.title, {
+      lower: true, // Convert to lowercase
+      remove: /[/*+~.()'"!:@]/g, // Remove specific characters
+    })
+
+    navigate(`/notes/${cleanedTitle}`)
+  }
+
   return (
-    <div className='block max-w-sm w-full p-6 mb-4 bg-gray-50 rounded-3xl hover:bg-orange-100 hover:cursor-pointer'>
+    <div
+      role='button'
+      tabIndex={0}
+      className='block max-w-sm w-full p-6 mb-4 bg-gray-50 rounded-3xl hover:bg-orange-100 hover:cursor-pointer'
+      onClick={handleNoteClick}
+      onKeyDown={handleNoteClick}
+    >
       <div>
         <h5 className='mb-2 text-lg font-semibold tracking-tight text-gray-700'>
-          {note.title}
+          {note.title} {note.emoji}
         </h5>
         <p
           className='text-sm font-medium text-gray-400'

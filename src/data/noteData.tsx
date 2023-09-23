@@ -28,7 +28,8 @@ const noteData: Note = {
       updatedAt: new Date(currentDate.getTime() - 60000).toISOString(),
     },
     {
-      title: 'Books to read 🌶️',
+      title: 'Books to read',
+      emoji: '🌶️',
       content:
         "Cheers to the books we've been meaning to read all these years and should probably start at some point.",
       checklist: {
@@ -45,7 +46,8 @@ const noteData: Note = {
       updatedAt: new Date(currentDate.getTime() - 300000).toISOString(),
     },
     {
-      title: 'Write down your ideas 💡',
+      title: 'Write down your ideas',
+      emoji: '💡',
       tags: ['#ideas', "#to-do's", '#morning'],
       content:
         "Sometimes, on Mondays, when servers at A16 are announcing the special, you can almost feel the excitement at the table when the waiters say, 'And of course, since it's Monday ... we have mathballs.' says Shelley Lingren",
@@ -76,7 +78,7 @@ const noteData: Note = {
       updatedAt: new Date(currentDate.getTime() - 86400000).toISOString(),
     },
     {
-      title: 'Curried Carrot Soup 🥕',
+      title: 'Curried Carrot Soup',
       tags: ['#recipes/savory', '#recipes/soups', '#recipessavorymains'],
       content:
         "Curried Carrot and Fennel Soup with Turmeric and Orange. This soup is a great way to use up a bunch of carrots. It's also vegan, paleo and gluten-free! It's a great soup to make ahead and freeze for later.",
@@ -115,7 +117,8 @@ const noteData: Note = {
       updatedAt: new Date(currentDate.getTime() - 604800000).toISOString(),
     },
     {
-      title: 'Mexican Tomatillo Scrambled Eggs 🍳',
+      title: 'Mexican Tomatillo Scrambled Eggs',
+      emoji: '🍳',
       tags: ['#recipes/savory', '#recipes/breakfast', '#recipes/savorymains'],
       content:
         "Mexican Tomatillo Scrambled Eggs. This recipe is a great way to use up leftover tomatillos. It's also vegan, paleo and gluten-free! It's a great soup to make ahead and freeze for later.",

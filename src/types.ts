@@ -29,6 +29,7 @@ export interface Collaborator {
 
 export interface NoteFields {
   title: string
+  emoji?: string
   content?: string
   subtitle?: string
   tags?: string[]
