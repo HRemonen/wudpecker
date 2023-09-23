@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import slugify from 'slugify'
 
 import CollaboratorStack from '../common/CollaboratorStack'
@@ -9,17 +9,20 @@ import timeSinceCreation from '../../utils/timedeltas'
 import { NoteFields } from '../../types'
 
 const NoteCard = ({ note }: { note: NoteFields }) => {
+  const location = useLocation()
   const navigate = useNavigate()
   const sinceCreation = timeSinceCreation(note.createdAt)
 
   const previewtext = generateNotePreview(note)
 
-  const handleNoteClick = () => {
-    const cleanedTitle = slugify(note.title, {
-      lower: true, // Convert to lowercase
-      remove: /[/*+~.()'"!:@]/g, // Remove specific characters
-    })
+  const currentNote = location.pathname.split('/notes/')[1]
 
+  const cleanedTitle = slugify(note.title, {
+    lower: true, // Convert to lowercase
+    remove: /[/*+~.()'"!:@]/g, // Remove specific characters
+  })
+
+  const handleNoteClick = () => {
     navigate(`/notes/${cleanedTitle}`)
   }
 
@@ -27,28 +30,46 @@ const NoteCard = ({ note }: { note: NoteFields }) => {
     <div
       role='button'
       tabIndex={0}
-      className='block max-w-sm w-full p-6 mb-4 bg-gray-50 rounded-3xl hover:bg-orange-100 hover:cursor-pointer'
+      className={`block max-w-sm w-full p-6 mb-4 rounded-3xl hover:bg-orange-100 hover:cursor-pointer ${
+        currentNote === cleanedTitle ? 'bg-[#ffb759]' : 'bg-gray-50'
+      }`}
       onClick={handleNoteClick}
       onKeyDown={handleNoteClick}
     >
       <div>
-        <h5 className='mb-2 text-lg font-semibold tracking-tight text-gray-700'>
+        <h5
+          className={`mb-2 text-lg font-semibold tracking-tight ${
+            currentNote === cleanedTitle ? 'text-white' : 'text-gray-700'
+          }`}
+        >
           {note.title} {note.emoji}
         </h5>
         <p
-          className='text-sm font-medium text-gray-400'
+          className={`text-sm font-medium ${
+            currentNote === cleanedTitle ? 'text-white' : 'text-gray-400'
+          }`}
           dangerouslySetInnerHTML={{
             __html: previewtext.replace(/\n/g, '<br />'),
           }}
         />
       </div>
       <div className='flex mt-4'>
-        <p className='text-gray-300 text-sm font-semibold'>{sinceCreation}</p>
+        <p
+          className={`text-sm font-medium ${
+            currentNote === cleanedTitle ? 'text-white' : 'text-gray-300'
+          }`}
+        >
+          {sinceCreation}
+        </p>
         {note.collaborators && (
           <CollaboratorStack collaborators={note.collaborators} />
         )}
         {note.location && (
-          <p className='text-orange-300 text-sm font-normal ml-auto'>
+          <p
+            className={`text-sm font-normal ml-auto ${
+              currentNote === cleanedTitle ? 'text-gray-100' : 'text-orange-300'
+            }`}
+          >
             {note.location.name}
           </p>
         )}
