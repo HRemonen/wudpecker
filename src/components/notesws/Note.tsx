@@ -6,6 +6,7 @@ import noteData from '../../data/noteData'
 import NoteNavbar from './NoteNavbar'
 import NoteTags from './NoteTags'
 import NoteChecklist from './NoteChecklist'
+import NoteControllers from './NoteControllers'
 
 const Note = () => {
   const { noteTitle } = useParams()
@@ -22,10 +23,10 @@ const Note = () => {
   if (!selectedNote) return null
 
   return (
-    <div className='w-full mt-2 h-[90vh] overflow-y-scroll scrollbar-hide'>
+    <div className='w-full'>
       <NoteNavbar note={selectedNote} />
       <div
-        className={`mx-4 ${
+        className={`mx-4 max-h-[80vh] overflow-y-scroll scrollbar-hide ${
           selectedNote.illustration ? 'mt-8' : 'mt-20'
         } md:mx-36`}
       >
@@ -45,6 +46,8 @@ const Note = () => {
         <p className='font-normal text-gray-300 mt-8'>{selectedNote.content}</p>
 
         <NoteChecklist note={selectedNote} />
+
+        <NoteControllers />
       </div>
     </div>
   )
