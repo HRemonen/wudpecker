@@ -12,14 +12,15 @@ module.exports = {
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: ['./tsconfig.json'],
+  },
   plugins: [
     'react-refresh',
     'react',
     '@typescript-eslint',
     'react-hooks',
     'prettier',
-    'cypress',
-    'simple-import-sort',
   ],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 0,
@@ -49,27 +50,6 @@ module.exports = {
     'arrow-body-style': ['error', 'as-needed'],
     'import/no-cycle': 'off',
     'import/extensions': 'off',
-    'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error',
   },
-  overrides: [
-    {
-      files: ['*.js', '*.jsx', '*.ts', '*.tsx'],
-      rules: {
-        'simple-import-sort/imports': [
-          'error',
-          {
-            groups: [
-              ['^react', '^@?\\w'],
-              ['^(@|components)(/.*|$)'],
-              ['^\\u0000'],
-              ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-              ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-              ['^.+\\.?(css)$'],
-            ],
-          },
-        ],
-      },
-    },
-  ],
+  overrides: [],
 }
