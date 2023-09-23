@@ -1,13 +1,8 @@
 import React from 'react'
-
-interface ActionItem {
-  name: string
-  icon: JSX.Element
-  onClick: () => void
-}
+import { ActionItemProps } from '../../types'
 
 interface ActionButtonProps {
-  actionItems: ActionItem[]
+  actionItems: ActionItemProps[]
 }
 
 const ActionSection = ({ actionItems }: ActionButtonProps) => (
