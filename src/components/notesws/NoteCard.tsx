@@ -9,7 +9,7 @@ const NoteCard = ({ note }: { note: NoteFields }) => {
   const previewtext = generateNotePreview(note)
 
   return (
-    <div className='block max-w-sm w-full p-6 mb-4 bg-gray-50 rounded-3xl hover:bg-orange-100'>
+    <div className='block max-w-sm w-full p-6 mb-4 bg-gray-50 rounded-3xl hover:bg-orange-100 hover:cursor-pointer'>
       <div>
         <h5 className='mb-2 text-lg font-semibold tracking-tight text-gray-700'>
           {note.title}

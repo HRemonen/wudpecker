@@ -1,7 +1,7 @@
 import { SearchBarProps } from '../../types'
 
 const SearchBar = ({ placeholder }: SearchBarProps) => (
-  <div className='max-w-xs'>
+  <div className='max-w-xs ml-6'>
     <div className='relative flex items-center w-full h-12 rounded-3xl border border-gray-200 bg-white overflow-hidden'>
       <div className='grid place-items-center h-full w-12 ml-12 text-gray-800'>
         <svg

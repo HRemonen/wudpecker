@@ -4,7 +4,7 @@ import NoteSelector from './NoteSelector'
 const NoteWorkspace = () => (
   <section className='mt-2'>
     <SearchBar placeholder='Search notes' />
-    <h1 className='mt-8 text-3xl font-semibold'>Notes</h1>
+    <h1 className='mt-8 ml-6 text-3xl font-semibold'>Notes</h1>
     <NoteSelector />
   </section>
 )
