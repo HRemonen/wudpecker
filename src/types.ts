@@ -11,3 +11,8 @@ export interface WorkspaceItemProps {
   icon?: ReactNode
   to: string
 }
+
+export interface SearchBarProps {
+  placeholder: string
+  onChange?: (value: string) => void
+}

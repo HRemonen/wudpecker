@@ -1,7 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
 import App from './App.tsx'
+import NoteWorkspace from './components/notesws/NoteWorkspace.tsx'
+
 import './index.css'
 
 const router = createBrowserRouter([
@@ -11,7 +14,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <h1>Home</h1>,
+        element: <NoteWorkspace />,
       },
     ],
   },
