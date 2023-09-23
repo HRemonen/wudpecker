@@ -8,17 +8,20 @@ const timeSinceCreation = (dateString: string) => {
   const diffInMinutes = Math.floor(diff / (1000 * 60))
   const diffInSeconds = Math.floor(diff / 1000)
 
-  if (diffInDays > 0) {
-    return `${diffInDays}d`
+  if (diffInDays > 1) {
+    return `${diffInDays} days`
+  }
+  if (diffInDays === 1) {
+    return `${diffInDays} day`
   }
   if (diffInHours > 0) {
-    return `${diffInHours}h`
+    return `${diffInHours} hour`
   }
   if (diffInMinutes > 0) {
-    return `${diffInMinutes}m`
+    return `${diffInMinutes} min`
   }
 
-  return `${diffInSeconds}s`
+  return `${diffInSeconds} sec`
 }
 
 export default timeSinceCreation
