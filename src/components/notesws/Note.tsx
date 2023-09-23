@@ -22,7 +22,7 @@ const Note = () => {
   if (!selectedNote) return null
 
   return (
-    <div className='w-full mt-2 h-[80vh] overflow-y-scroll'>
+    <div className='w-full mt-2 h-[90vh] overflow-y-scroll scrollbar-hide'>
       <NoteNavbar note={selectedNote} />
       <div
         className={`mx-4 ${
