@@ -30,7 +30,7 @@ const NoteCard = ({ note }: { note: NoteFields }) => {
     <div
       role='button'
       tabIndex={0}
-      className={`block max-w-sm w-full p-6 mb-4 rounded-3xl hover:cursor-pointer ${
+      className={`block max-w-xl w-full p-6 mb-4 rounded-3xl hover:cursor-pointer ${
         currentNote === cleanedTitle
           ? 'bg-[#ffb759]'
           : 'bg-gray-50 hover:bg-orange-100'

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import App from './App.tsx'
+import Note from './components/notesws/Note.tsx'
 import NoteWorkspace from './components/notesws/NoteWorkspace.tsx'
 
 import './index.css'
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
         children: [
           {
             path: ':noteTitle',
-            element: <h1>Single note</h1>,
+            element: <Note />,
           },
         ],
       },
