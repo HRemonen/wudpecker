@@ -54,10 +54,10 @@ const noteData: Note = {
       checklist: {
         title: 'Morning',
         items: [
-          { text: 'Setup meeting with Rachel', completed: false },
+          { text: 'Setup meeting with Rachel', completed: true },
           { text: 'Check to-dos', completed: false },
           { text: 'Apply at Braintree', completed: false },
-          { text: 'Check reservation', completed: false },
+          { text: 'Check reservation', completed: true },
         ],
       },
       collaborators: [
