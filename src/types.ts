@@ -41,6 +41,7 @@ export interface NoteFields {
   location?: {
     name: string
   }
+  illustration?: string
   createdAt: string
   updatedAt: string
 }

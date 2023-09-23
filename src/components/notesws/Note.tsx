@@ -22,9 +22,20 @@ const Note = () => {
   if (!selectedNote) return null
 
   return (
-    <div className='w-full mt-2'>
+    <div className='w-full mt-2 h-[80vh] overflow-y-scroll'>
       <NoteNavbar note={selectedNote} />
-      <div className='mx-4 mt-8 md:mx-36 md:mt-20'>
+      <div
+        className={`mx-4 ${
+          selectedNote.illustration ? 'mt-8' : 'mt-20'
+        } md:mx-36`}
+      >
+        {selectedNote.illustration && (
+          <img
+            src={selectedNote.illustration}
+            alt='related illustration'
+            className='scale-75'
+          />
+        )}
         <h1 className='text-4xl font-bold'>
           {selectedNote.title} {selectedNote.emoji}
         </h1>

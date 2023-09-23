@@ -5,6 +5,8 @@ import collaboratorAvatar2 from '../assets/joseph-gonzalez-iFgRcqHznqg-unsplash.
 import collaboratorAvatar3 from '../assets/christopher-campbell-rDEOVtE7vOs-unsplash.jpg'
 import collaboratorAvatar4 from '../assets/leio-mclaren-L2dTmhQzx4Q-unsplash.jpg'
 
+import noteIllustration1 from '../illustrations/note_illustration.png'
+
 const currentDate = new Date()
 
 const noteData: Note = {
@@ -24,6 +26,7 @@ const noteData: Note = {
       location: {
         name: 'San Francisco, CA',
       },
+      illustration: noteIllustration1,
       createdAt: new Date(currentDate.getTime() - 60000).toISOString(),
       updatedAt: new Date(currentDate.getTime() - 60000).toISOString(),
     },
@@ -42,6 +45,7 @@ const noteData: Note = {
           { text: 'The Catcher in the Rye', completed: false },
         ],
       },
+      illustration: noteIllustration1,
       createdAt: new Date(currentDate.getTime() - 300000).toISOString(),
       updatedAt: new Date(currentDate.getTime() - 300000).toISOString(),
     },
@@ -74,6 +78,7 @@ const noteData: Note = {
           avatar: collaboratorAvatar3,
         },
       ],
+      illustration: noteIllustration1,
       createdAt: new Date(currentDate.getTime() - 86400000).toISOString(),
       updatedAt: new Date(currentDate.getTime() - 86400000).toISOString(),
     },
