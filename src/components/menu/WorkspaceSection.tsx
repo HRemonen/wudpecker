@@ -1,4 +1,3 @@
-import React from 'react'
 import { WorkspaceItemProps } from '../../types'
 import WorkspaceItem from './WorkspaceItem'
 

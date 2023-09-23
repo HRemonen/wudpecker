@@ -1,5 +1,3 @@
-import React from 'react'
-
 const NewPage = () => (
   <div className='fixed bottom-12'>
     <button

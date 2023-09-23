@@ -1,4 +1,3 @@
-import React from 'react'
 import { ActionItemProps } from '../../types'
 
 interface ActionButtonProps {

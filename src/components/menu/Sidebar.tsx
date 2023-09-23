@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Applogo from './Applogo'
 import ActionSection from './ActionSection'
 import WorkspaceSection from './WorkspaceSection'
