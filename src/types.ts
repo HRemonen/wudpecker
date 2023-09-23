@@ -22,6 +22,11 @@ export interface ChecklistItem {
   completed: boolean
 }
 
+export interface Collaborator {
+  name: string
+  avatar: string
+}
+
 export interface NoteFields {
   title: string
   content?: string
@@ -31,10 +36,7 @@ export interface NoteFields {
     title: string
     items: ChecklistItem[]
   }
-  collaborators?: {
-    name: string
-    img: ReactNode
-  }[]
+  collaborators?: Collaborator[]
   location?: {
     name: string
   }

@@ -1,5 +1,10 @@
 import { Note } from '../types'
 
+import collaboratorAvatar1 from '../assets/foto-sushi-6anudmpILw4-unsplash.jpg'
+import collaboratorAvatar2 from '../assets/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg'
+import collaboratorAvatar3 from '../assets/christopher-campbell-rDEOVtE7vOs-unsplash.jpg'
+import collaboratorAvatar4 from '../assets/leio-mclaren-L2dTmhQzx4Q-unsplash.jpg'
+
 const currentDate = new Date()
 
 const noteData: Note = {
@@ -56,15 +61,15 @@ const noteData: Note = {
       collaborators: [
         {
           name: 'Robert C. Martin',
-          img: <img alt='headshot of a person' />,
+          avatar: collaboratorAvatar1,
         },
         {
           name: 'Martin Fowler',
-          img: <img alt='headshot of a person' />,
+          avatar: collaboratorAvatar2,
         },
         {
           name: 'John Doe',
-          img: <img alt='headshot of a person' />,
+          avatar: collaboratorAvatar3,
         },
       ],
       createdAt: new Date(currentDate.getTime() - 86400000).toISOString(),
@@ -103,7 +108,7 @@ const noteData: Note = {
       collaborators: [
         {
           name: 'Alan Turing',
-          img: <img alt='headshot of a person' />,
+          avatar: collaboratorAvatar4,
         },
       ],
       createdAt: new Date(currentDate.getTime() - 604800000).toISOString(),
