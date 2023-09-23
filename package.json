@@ -31,7 +31,7 @@
     "vite": "^4.4.5"
   },
   "lint-staged": {
-    "src/client/**/*.{ts,tsx}": "eslint",
+    "src/**/*.{ts,tsx}": "eslint",
     "**/*": "prettier --write --ignore-unknown"
   }
 }
