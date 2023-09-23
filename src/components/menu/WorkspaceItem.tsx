@@ -5,12 +5,12 @@ const WorkspaceItem = ({ to, name, icon }: WorkspaceItemProps) => (
   <li>
     <NavLink
       to={to}
-      className='group relative inline-flex w-full items-center justify-start overflow-hidden rounded bg-white px-6 py-2 font-normal transition-all hover:bg-white'
+      className='group relative inline-flex w-full items-center justify-start overflow-hidden rounded-md bg-white px-6 py-2 font-normal transition-all hover:bg-gray-200'
     >
       {({ isActive }) => (
         <span
           className={`relative flex w-full text-left transition-colors duration-300 ease-in-out ${
-            isActive ? 'text-black' : 'text-gray-400 group-hover:text-gray-500'
+            isActive ? 'text-black' : 'text-gray-400 group-hover:text-gray-600'
           }`}
         >
           {icon} <span className='pl-4 '>{name}</span>

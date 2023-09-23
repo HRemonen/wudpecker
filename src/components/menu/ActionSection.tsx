@@ -11,7 +11,7 @@ const ActionSection = ({ actionItems }: ActionButtonProps) => (
         <button
           type='button'
           key={`${item.name}-button`}
-          className='flex items-center space-x-1 px-6 py-2 rounded-md hover:bg-gray-200'
+          className='flex items-center space-x-1 w-full px-6 py-2 rounded-md hover:bg-gray-200'
           onClick={item.onClick}
         >
           {item.icon}
