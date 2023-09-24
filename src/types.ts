@@ -42,6 +42,7 @@ export interface NoteFields {
     name: string
   }
   illustration?: string
+  pinned: boolean
   createdAt: string
   updatedAt: string
 }

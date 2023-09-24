@@ -7,6 +7,7 @@ import generateNotePreview from '../../utils/notePreview'
 import timeSinceCreation from '../../utils/timedeltas'
 
 import { NoteFields } from '../../types'
+import Circle from '../common/Circle'
 
 const NoteCard = ({ note }: { note: NoteFields }) => {
   const location = useLocation()
@@ -30,7 +31,7 @@ const NoteCard = ({ note }: { note: NoteFields }) => {
     <div
       role='button'
       tabIndex={0}
-      className={`block w-full p-6 mb-4 rounded-3xl hover:cursor-pointer ${
+      className={`relative w-full p-6 mb-4 rounded-3xl hover:cursor-pointer ${
         currentNote === cleanedTitle
           ? 'bg-[#ffb759]'
           : 'bg-gray-50 hover:bg-orange-100'
@@ -74,6 +75,11 @@ const NoteCard = ({ note }: { note: NoteFields }) => {
           >
             {note.location.name}
           </p>
+        )}
+        {note.pinned && (
+          <div className='absolute top-4 right-0'>
+            <Circle checked={note.pinned} />
+          </div>
         )}
       </div>
     </div>
