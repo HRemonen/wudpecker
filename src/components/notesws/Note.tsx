@@ -26,15 +26,15 @@ const Note = () => {
     <div className='w-[30%] xl:w-[60%] flex-grow'>
       <NoteNavbar note={selectedNote} />
       <div
-        className={`mx-4 max-h-[80vh] overflow-y-scroll scrollbar-hide ${
-          selectedNote.illustration ? 'md:mt-4 xl:mt-12' : 'mt-20'
+        className={`mx-4 max-h-[80vh] mt-4 overflow-y-scroll scrollbar-hide ${
+          selectedNote.illustration ? 'mt-2 md:mt-24 xl:mt-12' : 'mt-24'
         } mx-12 xl:mx-36`}
       >
         {selectedNote.illustration && (
           <img
             src={selectedNote.illustration}
             alt='related illustration'
-            className='object-scale-down h-[480px] w-[640px] mx-auto'
+            className='object-scale-down h-[320px] w-[480px] mx-auto'
           />
         )}
         <h1 className='text-4xl font-bold'>
