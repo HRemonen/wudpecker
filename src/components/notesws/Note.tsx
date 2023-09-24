@@ -23,10 +23,10 @@ const Note = () => {
   if (!selectedNote) return null
 
   return (
-    <div className='w-[30%] xl:w-[60%] flex-grow'>
+    <div className='relative w-[30%] xl:w-[60%] flex-grow'>
       <NoteNavbar note={selectedNote} />
       <div
-        className={`mx-4 max-h-[80vh] mt-4 overflow-y-scroll scrollbar-hide ${
+        className={`mx-4 max-h-[70vh] mt-4 overflow-y-scroll scrollbar-hide ${
           selectedNote.illustration ? 'mt-2 md:mt-24 xl:mt-12' : 'mt-24'
         } mx-12 xl:mx-36`}
       >
@@ -46,9 +46,8 @@ const Note = () => {
         <p className='font-normal text-gray-300 mt-8'>{selectedNote.content}</p>
 
         <NoteChecklist note={selectedNote} />
-
-        <NoteControllers />
       </div>
+      <NoteControllers />
     </div>
   )
 }

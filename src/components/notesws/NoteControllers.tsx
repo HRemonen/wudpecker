@@ -1,5 +1,5 @@
 const NoteControllers = () => (
-  <div className='fixed flex space-x-4 right-24'>
+  <div className='absolute flex space-x-4 bottom-8 right-8'>
     <button type='button'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
