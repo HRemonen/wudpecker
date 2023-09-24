@@ -1,4 +1,5 @@
 import { NoteFields } from '../../types'
+import Circle from '../common/Circle'
 
 const NoteChecklist = ({ note }: { note: NoteFields }) => {
   if (!note.checklist?.items.length || note.checklist.items.length === 0)
@@ -13,11 +14,7 @@ const NoteChecklist = ({ note }: { note: NoteFields }) => {
             key={item.text}
             className='flex items-center hover:cursor-pointer'
           >
-            <div className='w-6 h-6 mr-4 bg-white border border-gray-200 rounded-full relative'>
-              {item.completed && (
-                <div className='w-3.5 h-3.5 bg-orange-300 rounded-full absolute top-1 left-1' />
-              )}
-            </div>
+            <Circle checked={item.completed} />
             <p className='text-md font-normal text-gray-500'>{item.text}</p>
           </div>
         ))}
