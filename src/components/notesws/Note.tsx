@@ -23,18 +23,18 @@ const Note = () => {
   if (!selectedNote) return null
 
   return (
-    <div className='w-full'>
+    <div className='w-[30%] xl:w-[60%] flex-grow'>
       <NoteNavbar note={selectedNote} />
       <div
         className={`mx-4 max-h-[80vh] overflow-y-scroll scrollbar-hide ${
-          selectedNote.illustration ? 'mt-8' : 'mt-20'
-        } md:mx-36`}
+          selectedNote.illustration ? 'md:mt-4 xl:mt-12' : 'mt-20'
+        } mx-12 xl:mx-36`}
       >
         {selectedNote.illustration && (
           <img
             src={selectedNote.illustration}
             alt='related illustration'
-            className='scale-75'
+            className='object-scale-down h-[480px] w-[640px] mx-auto'
           />
         )}
         <h1 className='text-4xl font-bold'>
